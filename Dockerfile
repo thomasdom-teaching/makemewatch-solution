@@ -7,7 +7,9 @@ RUN apt update && apt install -y \
     git \
     unzip
 
-RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install \
+    bcmath \
+    pdo_mysql
 
 COPY --from=composer:2.2.3 /usr/bin/composer /usr/local/bin/composer
 
