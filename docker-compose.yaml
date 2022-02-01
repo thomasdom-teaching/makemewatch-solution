@@ -24,6 +24,7 @@ services:
         image: thomasdom/makemewatch-php:1.0.0
         container_name: makemewatch_app
         restart: unless-stopped
+        entrypoint: .docker/php/entrypoint.sh
         extra_hosts:
             - 'host.docker.internal:host-gateway'
         volumes:
